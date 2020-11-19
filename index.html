@@ -66,7 +66,7 @@
             </li>
 
             <!-- SEARCH -->
-            <!-- Bootstrap Modal -->
+            <!-- Bootstrap trigger Modal -->
             <div class="container d-flex justify-content-center">
               <li class="nav-item">
                 <a
@@ -87,33 +87,40 @@
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
             >
-              <div class="modal-dialog" role="document">
+              <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                  <button
-                    type="button"
-                    id="close-search"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">
+                      Search
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
                   <form
                     action=""
                     id="myFormIdSearch"
                     onsubmit="return searchValidate()"
-                    name="mySearchForm"
+                    name="myFormSearch"
                   >
-                    <div class="modal-search">
+                    <div class="modal-body modal-search">
                       <div class="container">
-                        <input
-                          type="text"
-                          id="defaultForm-search"
-                          class="search-input validate"
-                          placeholder="Search for author, category..."
-                          autofocus
-                        />
-                        <div class="invalid-feedback" id="errorSearch"></div>
+                        <div class="form-group">
+                          <i class="search-item fa fa-search"></i>
+                          <label for="defaultSearch">Your search</label>
+                          <input
+                            type="text"
+                            id="defaultSearch"
+                            class="form-control validate"
+                            placeholder="Search for author, category..."
+                          />
+                          <div class="invalid-feedback" id="errorSearch"></div>
+                        </div>
                       </div>
                     </div>
                     <div class="modal-footer">
@@ -124,9 +131,7 @@
                       >
                         Cancel
                       </button>
-                      <button type="button" class="btn create btn-warning">
-                        Search
-                      </button>
+                      <button class="btn create btn-warning">Search</button>
                     </div>
                   </form>
                 </div>

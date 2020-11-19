@@ -5,16 +5,19 @@ const formSearch = document.getElementById("myFormIdSearch");
 function searchValidate() {
 	let errorSearch = 0;
 	
-	formSearch.classList.remove("is-invalid");
+  formSearch.classList.remove("is-invalid");
 
-  let inputSearchBar = document.forms["mySearchForm"]["defaultForm-search"];
   
-// Search
-if(inputSearchBar.value.length < 3) {
-	inputSearchBar.classList.add("is-invalid");
+  let inputSearch = document.forms["myFormSearch"]["defaultSearch"];
+
+
+// Password
+if(inputSearch.value.length < 3) {
+	inputSearch.classList.add("is-invalid");
 	document.getElementById("errorSearch").textContent = "Please insert at least 3 characters.";
 	errorSearch ++;
-} 
+}
+
 
 if (errorSearch > 0){
     return false;
@@ -27,8 +30,38 @@ if (errorSearch > 0){
 formSearch.addEventListener("blur", (event) => {
 	console.log(event);
 	if(event.target.value!='') event.target.classList.remove("is-invalid");
-    // searchBarValidate();
+    // searchValidate();
 }, true);
+
+// const formSearch = document.getElementById("myFormIdSearch");
+
+// function searchValidate() {
+// 	let errorSearch = 0;
+	
+// 	formSearch.classList.remove("is-invalid");
+
+//   let inputSearchBar = document.forms["mySearchForm"]["defaultForm-search"];
+  
+// // Search
+// if(inputSearchBar.value.length < 3) {
+// 	inputSearchBar.classList.add("is-invalid");
+// 	document.getElementById("errorSearch").textContent = "Please insert at least 3 characters.";
+// 	errorSearch ++;
+// } 
+
+// if (errorSearch > 0){
+//     return false;
+//     }else{
+//       return true;
+//   }
+
+// }
+
+// formSearch.addEventListener("blur", (event) => {
+// 	console.log(event);
+// 	if(event.target.value!='') event.target.classList.remove("is-invalid");
+//     // searchBarValidate();
+// }, true);
 
 
 

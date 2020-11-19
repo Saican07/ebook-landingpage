@@ -86,6 +86,10 @@ nav ul li a {
   margin-top: 5px;
 }
 
+.modal-footer {
+  border: 0;
+}
+
 /***  ------------------- LOGO --------------- ***/
 
 .nav-brand {
