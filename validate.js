@@ -4,33 +4,32 @@ const formSearch = document.getElementById("myFormIdSearch");
 
 function searchValidate() {
 	let errorSearch = 0;
-	
-  formSearch.classList.remove("is-invalid");
 
-  
-  let inputSearch = document.forms["myFormSearch"]["defaultSearch"];
+	formSearch.classList.remove("is-invalid");
 
 
-// Password
-if(inputSearch.value.length < 3) {
-	inputSearch.classList.add("is-invalid");
-	document.getElementById("errorSearch").textContent = "Please insert at least 3 characters.";
-	errorSearch ++;
-}
+	let inputSearch = document.forms["myFormSearch"]["defaultSearch"];
 
 
-if (errorSearch > 0){
-    return false;
-    }else{
-      return true;
-  }
+	// Password
+	if (inputSearch.value.length < 3) {
+		inputSearch.classList.add("is-invalid");
+		document.getElementById("errorSearch").textContent = "Please insert at least 3 characters.";
+		errorSearch++;
+	}
+
+
+	if (errorSearch > 0) {
+		return false;
+	} else {
+		return true;
+	}
 
 }
 
 formSearch.addEventListener("blur", (event) => {
 	console.log(event);
-	if(event.target.value!='') event.target.classList.remove("is-invalid");
-    // searchValidate();
+	if (event.target.value != '') event.target.classList.remove("is-invalid");
 }, true);
 
 
@@ -40,44 +39,43 @@ const formLogin = document.getElementById("myFormIdLogin");
 
 function loginValidate() {
 	let errorMessageLogin = 0;
-	
-  formLogin.classList.remove("is-invalid");
 
-  let inputEmailLogin = document.forms["myFormLogin"]["defaultForm-email"];
-  let inputPasswordLogin = document.forms["myFormLogin"]["defaultForm-pass"];
+	formLogin.classList.remove("is-invalid");
 
-  // Email
-  if(inputEmailLogin.value == "") {
-	inputEmailLogin.classList.add("is-invalid");
-	document.getElementById("errorEmailLogin").textContent = "Please enter your email.";
-	errorMessageLogin ++;
+	let inputEmailLogin = document.forms["myFormLogin"]["defaultForm-email"];
+	let inputPasswordLogin = document.forms["myFormLogin"]["defaultForm-pass"];
 
-  } else if(!validar_email(inputEmailLogin.value)){
-	inputEmailLogin.classList.add("is-invalid");
-	document.getElementById("errorEmailLogin").textContent = "Invalid email";
-	errorMessageLogin ++;
-}
+	// Email
+	if (inputEmailLogin.value == "") {
+		inputEmailLogin.classList.add("is-invalid");
+		document.getElementById("errorEmailLogin").textContent = "Please enter your email.";
+		errorMessageLogin++;
 
-// Password
-if(inputPasswordLogin.value == "") {
-	inputPasswordLogin.classList.add("is-invalid");
-	document.getElementById("errorPasswordLogin").textContent = "Please enter your password.";
-	errorMessageLogin ++;
-}
+	} else if (!validar_email(inputEmailLogin.value)) {
+		inputEmailLogin.classList.add("is-invalid");
+		document.getElementById("errorEmailLogin").textContent = "Invalid email";
+		errorMessageLogin++;
+	}
+
+	// Password
+	if (inputPasswordLogin.value == "") {
+		inputPasswordLogin.classList.add("is-invalid");
+		document.getElementById("errorPasswordLogin").textContent = "Please enter your password.";
+		errorMessageLogin++;
+	}
 
 
-if (errorMessageLogin > 0){
-    return false;
-    }else{
-      return true;
-  }
+	if (errorMessageLogin > 0) {
+		return false;
+	} else {
+		return true;
+	}
 
 }
 
 formLogin.addEventListener("blur", (event) => {
 	console.log(event);
-	if(event.target.value!='') event.target.classList.remove("is-invalid");
-    // loginValidate();
+	if (event.target.value != '') event.target.classList.remove("is-invalid");
 }, true);
 
 
@@ -90,66 +88,65 @@ const form = document.getElementById("myFormId");
 
 function registerValidate() {
 	let errorMessage = 0;
-	
-  form.classList.remove("is-invalid");
 
-  let inputUsername = document.forms["myForm"]["form-username"];
-  let inputEmail = document.forms["myForm"]['form-email'];
-  let inputPassword = document.forms["myForm"]["form-password"];
-  let inputConfirmPassword = document.forms["myForm"]["form-confirmPassword"];
-  let inputProvince = document.forms["myForm"]["form-province"];
+	form.classList.remove("is-invalid");
 
-// Username
-    if (inputUsername.value == "") {
-      inputUsername.classList.add("is-invalid")
-    document.getElementById("errorUsername").textContent = "Please enter your username.";
-    errorMessage++;
-  } 
+	let inputUsername = document.forms["myForm"]["form-username"];
+	let inputEmail = document.forms["myForm"]['form-email'];
+	let inputPassword = document.forms["myForm"]["form-password"];
+	let inputConfirmPassword = document.forms["myForm"]["form-confirmPassword"];
+	let inputProvince = document.forms["myForm"]["form-province"];
 
-//  Email
-  if(inputEmail.value == "") {
+	// Username
+	if (inputUsername.value == "") {
+		inputUsername.classList.add("is-invalid")
+		document.getElementById("errorUsername").textContent = "Please enter your username.";
+		errorMessage++;
+	}
+
+	//  Email
+	if (inputEmail.value == "") {
 		inputEmail.classList.add("is-invalid");
 		document.getElementById("errorEmail").textContent = "Please enter your email.";
-    errorMessage ++;
-    }else if(!validar_email(inputEmail.value)){
+		errorMessage++;
+	} else if (!validar_email(inputEmail.value)) {
 		inputEmail.classList.add("is-invalid");
 		document.getElementById("errorEmail").textContent = "Invalid email";
-		errorMessage ++;
+		errorMessage++;
 	}
 
 	// Password
-    if(inputPassword.value == "") {
+	if (inputPassword.value == "") {
 		inputPassword.classList.add("is-invalid");
 		document.getElementById("errorPassword").textContent = "Please enter your password.";
-		errorMessage ++;
+		errorMessage++;
 	}
-	
+
 	// Confirm Password
-    if(inputConfirmPassword.value == "") {
+	if (inputConfirmPassword.value == "") {
 		inputConfirmPassword.classList.add("is-invalid");
 		document.getElementById("errorConfirmPassword").textContent = "Please confirm your password.";
-		errorMessage ++;
+		errorMessage++;
 	}
 
 	// Province
-    if(inputProvince.value == "") {
+	if (inputProvince.value == "") {
 		inputProvince.classList.add("is-invalid");
 		document.getElementById("errorProvince").textContent = "Please enter your province.";
-		errorMessage ++;
+		errorMessage++;
 	}
 
-  if (errorMessage > 0){
-    return false;
-    }else{
-      return true;
-  }
+	if (errorMessage > 0) {
+		return false;
+	} else {
+		return true;
+	}
 
 }
 
 form.addEventListener("blur", (event) => {
 	console.log(event);
-	if(event.target.value!='') event.target.classList.remove("is-invalid");
-    // registerValidate();
+	if (event.target.value != '') event.target.classList.remove("is-invalid");
 }, true);
 
 function validar_email(email) {
